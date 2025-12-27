@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <title>Generate Questions</title>
+</head>
+
+<body>
+
+    <section class="main">
+        <div class="container">
+            <div class="header">
+                <h1><i class="fas fa-file-code"></i> HTML Quiz Generator</h1>
+                <p>Transform your JSON questions into interactive HTML quizzes</p>
+            </div>
+
+            <div class="content">
+                <div class="input-group">
+                    <div class="input-header">
+                        <h2>Title of Map Board</h2>
+                    </div>
+                    <input class="title-input" type="text" id="title" placeholder="Title">
+                    <div class="input-header">
+                        <h2>Your Questions (JSON Format)</h2>
+                    </div>
+
+                    <textarea class="json-input" id="json-input" placeholder='[
+  {
+    "q": "Your question here...",
+    "o": ["Option A", "Option B", "Option C"],
+    "a": 0
+  }
+]'></textarea>
+
+                    <div class="actions">
+                        <button class="generate-btn" id="generate-btn">
+                            Generate HTML File
+                        </button>
+                    </div>
+                </div>
+
+                <div class="example-section">
+                    <h3><i class="fas fa-lightbulb"></i> Example Format</h3>
+                    <pre><code>[
+  {
+    "q": "Sam wanted to play outside _______ it started to rain.",
+    "o": ["and", "but", "so"],
+    "a": 1
+  },
+  {
+    "q": "Mia cleaned her room _______ she found her lost toy.",
+    "o": ["and", "or", "yet"],
+    "a": 0
+  }
+  ]</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
