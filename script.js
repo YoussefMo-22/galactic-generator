@@ -30,7 +30,7 @@ generateBtn.addEventListener('click', async () => {
     // إضافة مجلد assets مع الأصوات وملف three.min.js
     const assets = zip.folder("assets");
 
-    const soundFiles = ['sounds/laser.mp3','sounds/pop.mp3']; // ضع ملفات الأصوات هنا
+    const soundFiles = ['laser.mp3','pop.mp3']; // ضع ملفات الأصوات هنا
     for (const file of soundFiles) {
       const data = await fetch(`./${file}`).then(r => r.arrayBuffer());
       assets.file(file, data);
@@ -1113,10 +1113,10 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
     // Sound effects
     let soundEnabled = true;
 
-    const laserSound = new Audio('./sounds/laser.mp3');
+    const laserSound = new Audio('./laser.mp3');
     laserSound.volume = 0.4;
 
-    const explosionSound = new Audio('./sounds/pop.mp3');
+    const explosionSound = new Audio('./pop.mp3');
     explosionSound.volume = 0.5;
 
 
