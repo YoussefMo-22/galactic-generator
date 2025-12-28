@@ -30,7 +30,7 @@ generateBtn.addEventListener('click', async () => {
     // إضافة مجلد assets مع الأصوات وملف three.min.js
     const assets = zip.folder("assets");
 
-    const soundFiles = ['./sounds/laser.mp3','./sounds/pop.mp3']; // ضع ملفات الأصوات هنا
+    const soundFiles = ['./laser.mp3','./pop.mp3']; // ضع ملفات الأصوات هنا
     for (const file of soundFiles) {
       const data = await fetch(`./${file}`).then(r => r.arrayBuffer());
       assets.file(file, data);
@@ -62,7 +62,7 @@ function generateHTMLFile(questions,titleValue){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galactic Grammar Battle: Two Teams Mode</title>
   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>-->
-  <script src='assets/three.min.js'></script>
+  <script src='./three.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
@@ -1113,10 +1113,10 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
     // Sound effects
     let soundEnabled = true;
 
-    const laserSound = new Audio('assets/laser.mp3');
+    const laserSound = new Audio('./laser.mp3');
     laserSound.volume = 0.4;
 
-    const explosionSound = new Audio('assets/pop.mp3');
+    const explosionSound = new Audio('./pop.mp3');
     explosionSound.volume = 0.5;
 
 
