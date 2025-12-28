@@ -30,9 +30,9 @@ generateBtn.addEventListener('click', async () => {
     // إضافة مجلد assets مع الأصوات وملف three.min.js
     const assets = zip.folder("assets");
 
-    const soundFiles = ['laser.mp3','explosion.mp3']; // ضع ملفات الأصوات هنا
+    const soundFiles = ['laser.mp3','pop.mp3']; // ضع ملفات الأصوات هنا
     for (const file of soundFiles) {
-      const data = await fetch(`./sounds/${file}`).then(r => r.arrayBuffer());
+      const data = await fetch(`./${file}`).then(r => r.arrayBuffer());
       assets.file(file, data);
     }
 
