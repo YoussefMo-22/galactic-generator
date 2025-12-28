@@ -61,8 +61,8 @@ function generateHTMLFile(questions,titleValue){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galactic Grammar Battle: Two Teams Mode</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <!--<script src='./three.min.js'></script>-->
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>-->
+  <script src='assets/three.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
@@ -1027,217 +1027,9 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
       starsContainer.appendChild(star);
     }
 
+    console.log(${JSON.stringify(questions)}[0]);
     // Question sets
-    const questionSets = {
-      'present_simple': [
-        {
-          question: "1. She _____ to school every day.",
-          options: ["go", "goes", "going"],
-          correct: 1
-        },
-        {
-          question: "2. They _____ football on Sundays.",
-          options: ["plays", "play", "playing"],
-          correct: 1
-        },
-        {
-          question: "3. He _____ not like coffee.",
-          options: ["do", "does", "did"],
-          correct: 1
-        },
-        {
-          question: "4. _____ you speak English?",
-          options: ["Do", "Does", "Did"],
-          correct: 0
-        },
-        {
-          question: "5. The sun _____ in the east.",
-          options: ["rise", "rises", "rising"],
-          correct: 1
-        },
-        {
-          question: "6. We _____ our homework every evening.",
-          options: ["do", "does", "doing"],
-          correct: 0
-        },
-        {
-          question: "7. She _____ her teeth twice a day.",
-          options: ["brush", "brushes", "brushing"],
-          correct: 1
-        },
-        {
-          question: "8. _____ he work in an office?",
-          options: ["Do", "Does", "Did"],
-          correct: 1
-        },
-        {
-          question: "9. They _____ tennis every weekend.",
-          options: ["plays", "play", "playing"],
-          correct: 1
-        },
-        {
-          question: "10. I _____ not understand this lesson.",
-          options: ["do", "does", "did"],
-          correct: 0
-        },
-        {
-          question: "11. The cat _____ on the sofa.",
-          options: ["sleep", "sleeps", "sleeping"],
-          correct: 1
-        },
-        {
-          question: "12. We _____ to the cinema on Fridays.",
-          options: ["go", "goes", "going"],
-          correct: 0
-        },
-        {
-          question: "13. _____ they live in London?",
-          options: ["Do", "Does", "Did"],
-          correct: 0
-        },
-        {
-          question: "14. He _____ his car every Saturday.",
-          options: ["wash", "washes", "washing"],
-          correct: 1
-        },
-        {
-          question: "15. Birds _____ in the sky.",
-          options: ["fly", "flies", "flying"],
-          correct: 0
-        },
-        {
-          question: "16. She _____ not eat meat.",
-          options: ["do", "does", "did"],
-          correct: 1
-        },
-        {
-          question: "17. _____ you have any pets?",
-          options: ["Do", "Does", "Did"],
-          correct: 0
-        },
-        {
-          question: "18. Water _____ at 100 degrees Celsius.",
-          options: ["boil", "boils", "boiling"],
-          correct: 1
-        },
-        {
-          question: "19. My sister _____ in a hospital.",
-          options: ["work", "works", "working"],
-          correct: 1
-        },
-        {
-          question: "20. Children _____ games in the park.",
-          options: ["play", "plays", "playing"],
-          correct: 0
-        }
-      ],
-      'present_continuous': [
-        {
-          question: "She _____ to school right now.",
-          options: ["is going", "goes", "going"],
-          correct: 0
-        },
-        {
-          question: "They _____ football at the moment.",
-          options: ["are playing", "play", "plays"],
-          correct: 0
-        },
-        {
-          question: "He _____ coffee at the café.",
-          options: ["is drinking", "drinks", "drink"],
-          correct: 0
-        },
-        {
-          question: "4. _____ you studying English?",
-          options: ["Are", "Do", "Does"],
-          correct: 0
-        },
-        {
-          question: "5. The sun _____ behind the clouds.",
-          options: ["is hiding", "hides", "hide"],
-          correct: 0
-        },
-        {
-          question: "6. We _____ our homework now.",
-          options: ["are doing", "do", "does"],
-          correct: 0
-        },
-        {
-          question: "7. She _____ her teeth at the moment.",
-          options: ["is brushing", "brushes", "brush"],
-          correct: 0
-        },
-        {
-          question: "8. _____ he working in the office today?",
-          options: ["Is", "Does", "Do"],
-          correct: 0
-        },
-        {
-          question: "9. They _____ tennis right now.",
-          options: ["are playing", "play", "plays"],
-          correct: 0
-        },
-        {
-          question: "10. I _____ this lesson at the moment.",
-          options: ["am understanding", "understand", "understands"],
-          correct: 0
-        }
-      ],
-      'past_simple': [
-        {
-          question: "1. She _____ to school yesterday.",
-          options: ["went", "goes", "going"],
-          correct: 0
-        },
-        {
-          question: "2. They _____ football last Sunday.",
-          options: ["played", "play", "playing"],
-          correct: 0
-        },
-        {
-          question: "3. He _____ coffee this morning.",
-          options: ["drank", "drinks", "drink"],
-          correct: 0
-        },
-        {
-          question: "4. _____ you study English yesterday?",
-          options: ["Did", "Do", "Does"],
-          correct: 0
-        },
-        {
-          question: "5. The sun _____ at 6 AM yesterday.",
-          options: ["rose", "rises", "rise"],
-          correct: 0
-        }
-      ],
-      'future_simple': [
-        {
-          question: "1. She _____ to school tomorrow.",
-          options: ["will go", "goes", "going"],
-          correct: 0
-        },
-        {
-          question: "2. They _____ football next Sunday.",
-          options: ["will play", "play", "playing"],
-          correct: 0
-        },
-        {
-          question: "3. He _____ coffee tomorrow morning.",
-          options: ["will drink", "drinks", "drink"],
-          correct: 0
-        },
-        {
-          question: "4. _____ you study English tomorrow?",
-          options: ["Will", "Do", "Does"],
-          correct: 0
-        },
-        {
-          question: "5. The sun _____ at 6 AM tomorrow.",
-          options: ["will rise", "rises", "rise"],
-          correct: 0
-        }
-      ]
-    };
+    const questionSets = ${JSON.stringify(questions)}[0];
 
     // Game state
     let currentQuestionSet = 'present_simple';
@@ -1321,10 +1113,10 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
     // Sound effects
     let soundEnabled = true;
 
-    const laserSound = new Audio('sounds/laser.mp3');
+    const laserSound = new Audio('assets/laser.mp3');
     laserSound.volume = 0.4;
 
-    const explosionSound = new Audio('sounds/pop.mp3');
+    const explosionSound = new Audio('assets/pop.mp3');
     explosionSound.volume = 0.5;
 
 
