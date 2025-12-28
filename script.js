@@ -38,7 +38,7 @@ generateBtn.addEventListener('click', async () => {
 
     // مثال لإضافة three.min.js (يمكن تعديله حسب مكان الملف)
     const threeJsData = await fetch('./three.min.js').then(r => r.text());
-    assets.file('three.min.js', threeJsData);
+    assets.file('./three.min.js', threeJsData);
 
     // تنزيل ZIP
     zip.generateAsync({type:"blob"}).then(content => {
