@@ -890,7 +890,7 @@ function generateHTMLFile(questions,titleValue){
     <button id="muteBtn"
       style="position: absolute; top: 20px; right: 30px; cursor: pointer; z-index: 1000; background-color: #1a1a4a; border-color: #00ffff; border-radius: 5px;">🔊</button>
     <header>
-      <h1>GALACTIC BATTLE-${titleValue}</h1>
+      <h1>${titleValue}</h1>
       <div class="subtitle">Answer questions correctly to attack!</div>
     </header>
 
