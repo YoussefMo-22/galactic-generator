@@ -6,7 +6,7 @@ const titleInput = document.querySelector(".title-input");
 generateBtn.addEventListener('click', async () => {
   try {
     const jsonValue = jsonInput.value.trim();
-    const titleValue = titleInput.value.trim() || "Map Board Game";
+    const titleValue = titleInput.value.trim() || "GALACTIC BATTLE Game";
     
     if (!jsonValue) {
       alert('Please enter some JSON data.');
@@ -925,7 +925,7 @@ function generateHTMLFile(questions,titleValue){
         </div>
 
         <div class="question-section">
-          <div class="question-counter">Question <span id="question-number">1</span> of 20</div>
+          <div class="question-counter">Question <span id="question-number">1</span> of <span id="total-questions"></span></div>
           <div class="question-text" id="question-text">Loading question...</div>
           <div class="answer-options" id="answer-options">
             <!-- Answer buttons will be populated here -->
@@ -1027,13 +1027,15 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
       starsContainer.appendChild(star);
     }
 
-    console.log(${JSON.stringify(questions)}[0]);
     // Question sets
     const questionSets = ${JSON.stringify(questions)}[0];
 
     // Game state
     let currentQuestionSet = 'present_simple';
     let questions = questionSets[currentQuestionSet];
+    const totalQuestionsEl = document.getElementById("total-questions");
+    const totalQuestions = questions.length; // get total questions dynamically
+    totalQuestionsEl.textContent = totalQuestions;
     let gameState = {
       mode: 'single',
       currentQuestion: 0,
