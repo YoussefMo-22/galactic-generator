@@ -42,7 +42,7 @@ generateBtn.addEventListener('click', async () => {
 
     // تنزيل ZIP
     zip.generateAsync({type:"blob"}).then(content => {
-      saveAs(content, `Map Board Game - ${titleValue}.zip`);
+      saveAs(content, `GALACTIC BATTLE - ${titleValue}.zip`);
     });
 
   } catch(err) {
@@ -60,7 +60,7 @@ function generateHTMLFile(questions,titleValue){
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galactic Grammar Battle: Two Teams Mode</title>
+  <title>Galactic Battle</title>
   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>-->
   <script src='./assets/three.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -878,7 +878,7 @@ function generateHTMLFile(questions,titleValue){
 
   <!-- Main Menu -->
   <div class="menu-screen" id="menu-screen">
-    <h1 class="menu-title">GALACTIC GRAMMAR BATTLE</h1>
+    <h1 class="menu-title">GALACTIC BATTLE</h1>
     <div class="menu-buttons">
       <button class="menu-btn" onclick="startGame('single')">Single Player</button>
       <button class="menu-btn" onclick="startGame('teams')">Two Teams</button>
@@ -890,8 +890,8 @@ function generateHTMLFile(questions,titleValue){
     <button id="muteBtn"
       style="position: absolute; top: 20px; right: 30px; cursor: pointer; z-index: 1000; background-color: #1a1a4a; border-color: #00ffff; border-radius: 5px;">🔊</button>
     <header>
-      <h1>GALACTIC GRAMMAR BATTLE</h1>
-      <div class="subtitle">Answer questions correctly to attack! Teams lose after 5 incorrect answers.</div>
+      <h1>GALACTIC BATTLE-${titleValue}</h1>
+      <div class="subtitle">Answer questions correctly to attack!</div>
     </header>
 
     <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
