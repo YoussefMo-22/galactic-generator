@@ -1650,7 +1650,8 @@ addLogEntry("Question set changed to: " + setName.replace('_', ' ').toUpperCase(
       // نص السؤال
       const questionTextModal = document.createElement('div');
       questionTextModal.className = 'modal-question-text';
-      
+      questionTextModal.textContent =
+        "Question " + (questionIndex + 1) + ": " + q.question;
       questionModalContent.appendChild(questionTextModal);
 
       // خيارات الإجابة
