@@ -263,7 +263,7 @@ function generateHTMLFile(questions,titleValue){
     }
 
     .player-name {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: bold;
       color: #00f7ff;
       margin-bottom: 10px;
@@ -1030,7 +1030,7 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
     }
 
     // Question sets
-    const questionSets = ${JSON.stringify(questions)}[0];
+    const questionSets = ${JSON.stringify(questions)};
 
     // Game state
     let questions = questionSets;
@@ -1242,7 +1242,7 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
       nextBtn.classList.add('hidden');
       questionNumber.textContent = index + 1;
       const q = questions[index];
-      questionText.textContent = 'Q' +(index + 1)+ ": "q.question;
+      questionText.textContent = 'Q' +(index + 1)+ ": " + q.question;
 
       // Clear previous answers
       answerOptions.innerHTML = '';
