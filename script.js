@@ -231,11 +231,13 @@ function generateHTMLFile(questions,titleValue){
 
     .player-info {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 15px;
     }
 
     .player-stats {
+      flex: 1;
+      min-width:0;
       background: rgba(20, 30, 60, 0.85);
       padding: 12px 15px;
       border-radius: 10px;
@@ -261,7 +263,7 @@ function generateHTMLFile(questions,titleValue){
     }
 
     .player-name {
-      font-size: 19.4px;
+      font-size: 14px;
       font-weight: bold;
       color: #00f7ff;
       margin-bottom: 10px;
@@ -272,7 +274,7 @@ function generateHTMLFile(questions,titleValue){
     }
 
     .turn-indicator {
-      font-size: 19.4px;
+      font-size: 11px;
       color: #00ff00;
       animation: pulse 1s infinite;
       margin-top: 5px;
@@ -622,13 +624,13 @@ function generateHTMLFile(questions,titleValue){
     }
 
     .team-score {
-      font-size: 19.4px;
+      font-size: 11px;
       color: #cc66ff;
       margin-top: 5px;
     }
 
     .incorrect-counter {
-      font-size: 19.4px;
+      font-size: 11px;
       color: #ffcc00;
       margin-top: 5px;
     }
@@ -1031,8 +1033,7 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
     const questionSets = ${JSON.stringify(questions)}[0];
 
     // Game state
-    let currentQuestionSet = 'present_simple';
-    let questions = questionSets[currentQuestionSet];
+    let questions = questionSets;
     const totalQuestionsEl = document.getElementById("total-questions");
     const totalQuestions = questions.length; // get total questions dynamically
     totalQuestionsEl.textContent = totalQuestions;
@@ -1241,7 +1242,7 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
       nextBtn.classList.add('hidden');
       questionNumber.textContent = index + 1;
       const q = questions[index];
-      questionText.textContent = q.question;
+      questionText.textContent = 'Q' +(index + 1)+ ": "q.question;
 
       // Clear previous answers
       answerOptions.innerHTML = '';
@@ -1564,18 +1565,7 @@ gameOverMessage.innerHTML = message;
       questionsDropdown.innerHTML = '<div class="dropdown-header">Select Question</div>';
 
       // Add question set selector
-      const sets = Object.keys(questionSets);
-      sets.forEach(setName => {
-        const setItem = document.createElement('a');
-        setItem.href = '#';
-        setItem.className = 'dropdown-item';
-        setItem.textContent = "Set: " + setName.replace('_', ' ').toUpperCase();
-        setItem.onclick = (e) => {
-          e.preventDefault();
-          changeQuestionSet(setName);
-        };
-        questionsDropdown.appendChild(setItem);
-      });
+      
 
       // Add divider
       const divider = document.createElement('div');
@@ -1585,16 +1575,18 @@ gameOverMessage.innerHTML = message;
 
       // Add individual questions
       questions.forEach((q, index) => {
-        const dropdownItem = document.createElement('a');
-        dropdownItem.href = '#';
-        dropdownItem.className = 'dropdown-item';
-        dropdownItem.textContent = "Q" + (index + 1) + ": " + q.question.substring(0, 30) + "...";
-        dropdownItem.onclick = (e) => {
-          e.preventDefault();
-          changeCurrentQuestion(index);
-        };
-        questionsDropdown.appendChild(dropdownItem);
-      });
+      const item = document.createElement('a');
+      item.href = '#';
+      item.className = 'dropdown-item';
+      item.textContent = 'Question ' + (index + 1);
+      
+      item.onclick = (e) => {
+        e.preventDefault();
+        changeQuestionSet(index);
+      };
+
+      questionsDropdown.appendChild(item);
+    });
     }
 
     // Change current question
@@ -1613,17 +1605,15 @@ gameOverMessage.innerHTML = message;
     }
 
     // Change question set
-    function changeQuestionSet(setName) {
-      currentQuestionSet = setName;
-      questions = questionSets[setName];
+    function changeQuestionSet() {
+      
+      gameState.currentQuestion = questionIndex;
+      loadQuestion(questionIndex);
 
-      // Reset the game with new questions
-      gameState.currentQuestion = 0;
-      gameState.answeredQuestions = [];
-      loadQuestion(0);
-
-      // Update log
-addLogEntry("Question set changed to: " + setName.replace('_', ' ').toUpperCase(), 'system-log');
+      addLogEntry(
+        "Moved to Question " + (questionIndex + 1),
+        'system-log'
+      );
 
       // Close dropdown
       if (activeDropdown) {
