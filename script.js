@@ -1605,7 +1605,7 @@ gameOverMessage.innerHTML = message;
     }
 
     // Change question set
-    function changeQuestionSet() {
+    function changeQuestionSet(questionIndex) {
       
       gameState.currentQuestion = questionIndex;
       loadQuestion(questionIndex);
