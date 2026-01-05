@@ -31,228 +31,121 @@
                         <h2>Your Questions (JSON Format)</h2>
                     </div>
 
-                    <textarea class="json-input" id="json-input" placeholder='[{
-  "present_simple": [
-    {
-      "question": "She _____ to school every day.",
-      "options": ["go", "goes", "going"],
-      "correct": 1
-    },
-    {
-      "question": "They _____ football on Sundays.",
-      "options": ["plays", "play", "playing"],
-      "correct": 1
-    },
-    {
-      "question": "He _____ not like coffee.",
-      "options": ["do", "does", "did"],
-      "correct": 1
-    },
-    {
-      "question": "_____ you speak English?",
-      "options": ["Do", "Does", "Did"],
-      "correct": 0
-    }
-  ],
-  "present_continuous": [
-    {
-      "question": "She _____ to school right now.",
-      "options": ["is going", "goes", "going"],
-      "correct": 0
-    },
-    {
-      "question": "They _____ football at the moment.",
-      "options": ["are playing", "play", "plays"],
-      "correct": 0
-    },
-    {
-      "question": "He _____ coffee at the café.",
-      "options": ["is drinking", "drinks", "drink"],
-      "correct": 0
-    },
-    {
-      "question": "_____ you studying English?",
-      "options": ["Are", "Do", "Does"],
-      "correct": 0
-    },
-    {
-      "question": "The sun _____ behind the clouds.",
-      "options": ["is hiding", "hides", "hide"],
-      "correct": 0
-    }
-  ],
-  "past_simple": [
-    {
-      "question": "She _____ to school yesterday.",
-      "options": ["went", "goes", "going"],
-      "correct": 0
-    },
-    {
-      "question": "They _____ football last Sunday.",
-      "options": ["played", "play", "playing"],
-      "correct": 0
-    },
-    {
-      "question": "He _____ coffee this morning.",
-      "options": ["drank", "drinks", "drink"],
-      "correct": 0
-    },
-    {
-      "question": "_____ you study English yesterday?",
-      "options": ["Did", "Do", "Does"],
-      "correct": 0
-    },
-    {
-      "question": "The sun _____ at 6 AM yesterday.",
-      "options": ["rose", "rises", "rise"],
-      "correct": 0
-    }
-  ],
-  "future_simple": [
-    {
-      "question": "She _____ to school tomorrow.",
-      "options": ["will go", "goes", "going"],
-      "correct": 0
-    },
-    {
-      "question": "They _____ football next Sunday.",
-      "options": ["will play", "play", "playing"],
-      "correct": 0
-    },
-    {
-      "question": "He _____ coffee tomorrow morning.",
-      "options": ["will drink", "drinks", "drink"],
-      "correct": 0
-    },
-    {
-      "question": "_____ you study English tomorrow?",
-      "options": ["Will", "Do", "Does"],
-      "correct": 0
-    },
-    {
-      "question": "The sun _____ at 6 AM tomorrow.",
-      "options": ["will rise", "rises", "rise"],
-      "correct": 0
-    }
-  ]
-}
+                    <textarea class="json-input" id="json-input" placeholder='[
+  {
+    "question": "She _____ to school every day.",
+    "options": ["go", "goes", "going"],
+    "correct": 1
+  },
+  {
+    "question": "They _____ football on Sundays.",
+    "options": ["plays", "play", "playing"],
+    "correct": 1
+  },
+  {
+    "question": "He _____ not like coffee.",
+    "options": ["do", "does", "did"],
+    "correct": 1
+  },
+  {
+    "question": "_____ you speak English?",
+    "options": ["Do", "Does", "Did"],
+    "correct": 0
+  },
+  {
+    "question": "She _____ to school right now.",
+    "options": ["is going", "goes", "going"],
+    "correct": 0
+  },
+  {
+    "question": "They _____ football at the moment.",
+    "options": ["are playing", "play", "plays"],
+    "correct": 0
+  },
+  {
+    "question": "He _____ coffee at the café.",
+    "options": ["is drinking", "drinks", "drink"],
+    "correct": 0
+  },
+  {
+    "question": "She _____ to school yesterday.",
+    "options": ["went", "goes", "going"],
+    "correct": 0
+  },
+  {
+    "question": "They _____ football last Sunday.",
+    "options": ["played", "play", "playing"],
+    "correct": 0
+  },
+  {
+    "question": "She _____ to school tomorrow.",
+    "options": ["will go", "goes", "going"],
+    "correct": 0
+  }
 ]'></textarea>
 
                     <div class="actions">
                         <button class="generate-btn" id="generate-btn">
-                            Generate ZIP Folder
+                            Generate HTML File
                         </button>
                     </div>
                 </div>
 
                 <div class="example-section">
                     <h3><i class="fas fa-lightbulb"></i> Example Format</h3>
-                    <pre><code>[{
-  "present_simple": [
-    {
-      "question": "She _____ to school every day.",
-      "options": ["go", "goes", "going"],
-      "correct": 1
-    },
-    {
-      "question": "They _____ football on Sundays.",
-      "options": ["plays", "play", "playing"],
-      "correct": 1
-    },
-    {
-      "question": "He _____ not like coffee.",
-      "options": ["do", "does", "did"],
-      "correct": 1
-    },
-    {
-      "question": "_____ you speak English?",
-      "options": ["Do", "Does", "Did"],
-      "correct": 0
-    }
-  ],
-  "present_continuous": [
-    {
-      "question": "She _____ to school right now.",
-      "options": ["is going", "goes", "going"],
-      "correct": 0
-    },
-    {
-      "question": "They _____ football at the moment.",
-      "options": ["are playing", "play", "plays"],
-      "correct": 0
-    },
-    {
-      "question": "He _____ coffee at the café.",
-      "options": ["is drinking", "drinks", "drink"],
-      "correct": 0
-    },
-    {
-      "question": "_____ you studying English?",
-      "options": ["Are", "Do", "Does"],
-      "correct": 0
-    },
-    {
-      "question": "The sun _____ behind the clouds.",
-      "options": ["is hiding", "hides", "hide"],
-      "correct": 0
-    }
-  ],
-  "past_simple": [
-    {
-      "question": "She _____ to school yesterday.",
-      "options": ["went", "goes", "going"],
-      "correct": 0
-    },
-    {
-      "question": "They _____ football last Sunday.",
-      "options": ["played", "play", "playing"],
-      "correct": 0
-    },
-    {
-      "question": "He _____ coffee this morning.",
-      "options": ["drank", "drinks", "drink"],
-      "correct": 0
-    },
-    {
-      "question": "_____ you study English yesterday?",
-      "options": ["Did", "Do", "Does"],
-      "correct": 0
-    },
-    {
-      "question": "The sun _____ at 6 AM yesterday.",
-      "options": ["rose", "rises", "rise"],
-      "correct": 0
-    }
-  ],
-  "future_simple": [
-    {
-      "question": "She _____ to school tomorrow.",
-      "options": ["will go", "goes", "going"],
-      "correct": 0
-    },
-    {
-      "question": "They _____ football next Sunday.",
-      "options": ["will play", "play", "playing"],
-      "correct": 0
-    },
-    {
-      "question": "He _____ coffee tomorrow morning.",
-      "options": ["will drink", "drinks", "drink"],
-      "correct": 0
-    },
-    {
-      "question": "_____ you study English tomorrow?",
-      "options": ["Will", "Do", "Does"],
-      "correct": 0
-    },
-    {
-      "question": "The sun _____ at 6 AM tomorrow.",
-      "options": ["will rise", "rises", "rise"],
-      "correct": 0
-    }
-  ]
-}
-]</code></pre>
+                    <pre><code>[
+  {
+    "question": "She _____ to school every day.",
+    "options": ["go", "goes", "going"],
+    "correct": 1
+  },
+  {
+    "question": "They _____ football on Sundays.",
+    "options": ["plays", "play", "playing"],
+    "correct": 1
+  },
+  {
+    "question": "He _____ not like coffee.",
+    "options": ["do", "does", "did"],
+    "correct": 1
+  },
+  {
+    "question": "_____ you speak English?",
+    "options": ["Do", "Does", "Did"],
+    "correct": 0
+  },
+  {
+    "question": "She _____ to school right now.",
+    "options": ["is going", "goes", "going"],
+    "correct": 0
+  },
+  {
+    "question": "They _____ football at the moment.",
+    "options": ["are playing", "play", "plays"],
+    "correct": 0
+  },
+  {
+    "question": "He _____ coffee at the café.",
+    "options": ["is drinking", "drinks", "drink"],
+    "correct": 0
+  },
+  {
+    "question": "She _____ to school yesterday.",
+    "options": ["went", "goes", "going"],
+    "correct": 0
+  },
+  {
+    "question": "They _____ football last Sunday.",
+    "options": ["played", "play", "playing"],
+    "correct": 0
+  },
+  {
+    "question": "She _____ to school tomorrow.",
+    "options": ["will go", "goes", "going"],
+    "correct": 0
+  }
+]
+</code></pre>
                 </div>
             </div>
         </div>
