@@ -1459,6 +1459,7 @@ star.style.setProperty('--duration', 2 + Math.random() * 3 + "s");
       document.querySelector('header').style.display = 'block';
       initGame();
       addLogEntry('Game reset! Starting fresh battle!', 'system-log');
+      endGame();
     }
 
     // End game
